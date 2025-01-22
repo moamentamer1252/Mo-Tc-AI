@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo Tc Chat App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000000;
+            color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+        }
+        .chat-container {
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left img {
+            width: 35px;
+            border-radius: 50%;
+            margin-right: 3px;
+        }
+        .name {
+            margin-right: 7px;
+        }
+        header span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 15px;
+            max-width: 80%;
+            position: relative;
+        }
+        .message.received {
+            background-color: #2c2f36;
+            margin-left: 10px;
+        }
+        .message.sent {
+            background-color: #049183;
+            margin-right: -3px;
+            align-self: flex-end;
+        }
+        .message-text {
+            font-size: 16px;
+            color: #000000;
+        }
+        .input-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .input-box input {
+            border-radius: 15px;
+            width: 80%;
+            padding: 10px;
+            backdrop-filter: blur(3px);
+            background-color: #2c2f3667;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+        }
+        .input-box button {
+            transform: translateX(10px);
+            width: 15%;
+            padding: 7px;
+            background-color: #06796d;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-box button:hover {
+            background-color: #0a524a;
+        }
+        .input-box button img {
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <header>
+            <div class="header-left">
+                <img src="WhatsApp Image 2025-01-22 at 12.40.44 PM.jpeg" alt="User Avatar" class="avatar">
+                <span class="name">Mo Tc Ar</span>
+            </div>
+        </header>
+        <div class="chat-box">
+            <div class="message sent">
+                <span class="message-text">Welcome to Mo Tc! 🎉 We are a company specializing in programming, website design, software development, and modern technology solutions. 🚀 How can we assist you? If you have any problems or ideas you'd like support with, we're here to turn your idea into reality! 💻 We're excited to connect with you and ready to help you achieve everything you dream of. 😊</span>
+            </div>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="... Type your message" />
+            <button>
+                <img src="https://cdn-icons-png.flaticon.com/512/6068/6068932.png" alt="Send Icon">
+            </button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const chatBox = document.querySelector(".chat-box");
+            const inputField = document.querySelector(".input-box input");
+            const sendButton = document.querySelector(".input-box button");
+            let messageCount = 0;
+
+            function addMessage(messageText, messageClass) {
+                const messageElement = document.createElement("div");
+                messageElement.classList.add("message", messageClass);
+                const messageContent = document.createElement("span");
+                messageContent.classList.add("message-text");
+                messageContent.textContent = messageText;
+                messageElement.appendChild(messageContent);
+                chatBox.appendChild(messageElement);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }
+
+            sendButton.addEventListener("click", function () {
+                const messageText = inputField.value.trim();
+                if (messageText) {
+                    addMessage(messageText, "received");
+                    inputField.value = "";
+                    setTimeout(() => {
+                        if (messageCount === 0) {
+                            addMessage("Hello, I'm Mo Tc AI and I'm so glad to chat with you! ☺️ If you're looking to create a professional website aligned with the latest technologies, we at 'Mo Tc' are ready to offer you the best service possible. Our team specializes in web design and development, ready to turn your ideas into standout websites that reflect your needs and aspirations. We also leverage the latest AI tools to optimize site performance and deliver a unique user experience, ensuring your website is not only functional but also fast, secure, and compatible with all devices. If you'd like to get started or have any questions, just fill in the form below. Once submitted, one of our customer service representatives will reach out to you quickly with all the details. I’m here as AI, ready to help and provide the best solutions for your digital goals. We’re waiting for you! Here's the form, my friend: https://moamentamer1252.github.io/Website-Request-Form/", "sent");
+                        } else if (messageCount === 1) {
+                            addMessage("Thank you for reaching out to us 😊. We are always here to assist you at any time. If you need anything or have any inquiries, we are ready to provide you with the best solution as quickly as possible 🚀. If there’s a problem or a specific request, don’t hesitate to let us know, and we’ll address it with the highest level of care 👍. Thank you again, and we look forward to any details or directions from you so we can serve you in the best way possible.", "sent");
+                        } else if (messageCount === 2) {
+                            addMessage("Dear customer, I am Mo Tc AI, the AI system designed to assist you. I’ve done my best to provide the information and answers you need based on the available data and tools. However, please note that as AI, I operate within the boundaries and guidelines designed to ensure the accuracy of information, privacy protection, and the best possible user experience. These limitations might mean that some things may be outside of my direct capability to assist with. If I’m unable to fully meet your request or if you have additional questions or problems that require specialized solutions, I recommend contacting one of our customer service representatives. Our team consists of professional experts ready to support you in the best way possible, and they’re available to answer your inquiries and provide the needed assistance in a more in-depth and direct manner. I also have a specific message I must send to you, and if you need any additional clarifications or wish to continue with the request with customer service, feel free to do so. We're always here to help. Thank you for your understanding.", "sent");
+                        } else if (messageCount === 3) {
+                            addMessage("Unfortunately, I won’t be able to fully understand you. If you have any other inquiries, you may contact one of our customer service representatives. Thank you for your understanding. 😇♥️", "sent");
+                        }
+                        messageCount++;
+                    }, 1000);
+                }
+            });
+
+            inputField.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") {
+                    sendButton.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
