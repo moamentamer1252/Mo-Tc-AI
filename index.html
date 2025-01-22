@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo Tc Chat App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0c0c0c;
+            color: #e0e0e0;
+        }
+
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .header {
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 5px;
+            text-align: center;
+            border-bottom: 2px solid #03DAC6;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            color: #03DAC6;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 7px;
+            left: 5px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .chat-list {
+            margin-top: 20px;
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            text-decoration: none;
+            color: #e0e0e0;
+        }
+
+        .chat-item:hover {
+            background-color: #2a2a2a;
+        }
+
+        .user-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .user-name {
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+
+        .last-message {
+            font-size: 14px;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .chat-item {
+                padding: 10px;
+            }
+
+            .user-img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .user-name {
+                font-size: 16px;
+            }
+
+            .last-message {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mo Tc Chat</h1>
+            <a href="ligh Mode.html"><img src="https://static-00.iconduck.com/assets.00/mode-light-icon-512x512-yuubs6qt.png" alt="Light Mode" class="back-btn"></a>
+            
+        </div>
+        <div class="chat-list">
+            <a href="index Mo Tc En.html" class="chat-item">
+                <img src="WhatsApp Image 2025-01-22 at 12.40.44 PM.jpeg" alt="User Image" class="user-img">
+                <div class="user-info">
+                    <span class="user-name">Mo Tc En</span>
+                    <p class="last-message">Welcome to Mo Tc! 🎉</p>
+                </div>
+            </a>
+            <a href="index Mo Tc Ar.html" class="chat-item">
+                <img src="WhatsApp Image 2025-01-22 at 12.40.44 PM.jpeg" alt="User Image" class="user-img">
+                <div class="user-info">
+                    <span class="user-name">Mo Tc Ar</span>
+                    <p class="last-message">Mo Tc! 🎉 مرحبًا بك في</p>
+                </div>
+            </a>
+            <a href="index Mo Tc Pl .html" class="chat-item">
+                <img src="WhatsApp Image 2025-01-22 at 12.35.55 PM.jpeg" alt="User Image" class="user-img">
+                <div class="user-info">
+                    <span class="user-name">Mo Tc Form</span>
+                    <p class="last-message">img...</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
